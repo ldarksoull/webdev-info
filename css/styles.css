@@ -82,7 +82,9 @@
   align-items: flex-end;
   padding-top: 50px;
 }
-.title-li{
+
+
+.title-li,.mob-title-li{
   color: #000000;
   font-family: Roboto;
   font-size: 30px;
@@ -90,6 +92,7 @@
   line-height: 35px;
   text-transform: uppercase;
 }
+
 ul{
   width: 100%;
   display: flex;
@@ -97,18 +100,19 @@ ul{
   align-items: center;
   margin-bottom: 20px;
 }
-.li{
+.li, .mob-li{
   color: #000000;
   font-family: Roboto;
   font-size: 18px;
   font-weight: 300;
   line-height: 21px;
   list-style: none;
-  width: 300px;;
+  width: 300px;
   text-align: center;
   transition: 0.5s;
   cursor: pointer;
 }
+
 .li a{
   display: block;
   width: 100%;
@@ -120,12 +124,34 @@ ul{
 }
 .li:hover{
   box-shadow: inset 0px 100px 10px 30px rgb(0, 213, 124);
-  color: #fff
-
+  color: #fff;
 }
+.mob-li{
+  padding: 5px;
+}
+.mob-li a{
+  color: #fff!important;
+  padding: 10px;
+}
+.mob-li a:hover{
+  color: rgb(0, 213, 124)!important;
+  padding: 10px;
+}
+.mob-title-li{
+  color: #8b8b8b
+}
+.mob-sidebar{
+  width: 256px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+}
+
 article{
   max-width: 750px;
-  height: 335px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 1px 18px rgba(0, 0, 0, 0.12), 0 6px 10px rgba(0, 0, 0, 0.14);
   background-color: #ffffff;
   padding: 20px;
@@ -149,9 +175,7 @@ article{
   font-weight: 400;
   line-height: 14px;
 }
-.article-preview{
-  max-height: 225px;
-}
+
 .paragraph{
   padding: 10px 0px;
   color: #000000;
@@ -167,4 +191,68 @@ article{
   font-weight: 700;
   line-height: 16px;
 }
+
+/* media */
+@media (max-width: 1200px){
+  .content{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .sidebar{
+    min-width: 20%;
+  }
+}
+@media (max-width: 700px){
+  .sidebar{
+    display: none;
+  }
+}
+@media (max-width: 500px){
+  .header{
+    height: 130px;
+  }
+  .header-content{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+  .slideout-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 256px;
+    min-height: 100vh;
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
+    display: none;
+  }
+  
+  .slideout-menu-left {
+    left: 0;
+  }
+  
+  .slideout-menu-right {
+    right: 0;
+  }
+  
+  .slideout-panel {
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    background-color: #FFF; /* A background-color is required */
+    min-height: 100vh;
+  }
+  
+  .slideout-open,
+  .slideout-open body,
+  .slideout-open .slideout-panel {
+    overflow: hidden;
+  }
+  
+  .slideout-open .slideout-menu {
+    display: block;
+  }
+
 
